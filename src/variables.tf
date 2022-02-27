@@ -26,7 +26,6 @@ variable "project" {
   type = string
 }
 
-# VPC Configuration
 variable "vpc_cidr" {
   description = "The CIDR block for the VPC. Default value is a valid CIDR, but not acceptable by AWS and should be overridden"
   type        = string
@@ -39,13 +38,6 @@ variable "subnet_cidr_bits" {
   default     = 8
 }
 
-# Management Access
-variable "office_cidr" {
-  description = "CIDR Block for SG to Grant Access to Bastion/Jumpbox Instances (i.e. 192.168.100.0/24). e.g. The IP address range of your corporate office or personal computer."
-  type        = string
-  default     = "0.0.0.0/0"
-}
-
 variable "tags" {
   description = "A map of tags to add to all resources"
   type        = map(string)
@@ -53,7 +45,5 @@ variable "tags" {
     "Project"     = "TerraformEKSWorkshop"
     "Environment" = "Development"
     "Owner"       = "Ashish Patel"
-    "BillingCode" = "BILLCODE01"
-    "Source"      = "Terraform"
   }
 }
