@@ -14,8 +14,11 @@ variable "region" {
   default     = "us-east-1"
 }
 
-
-# GENERAL INFO
+variable "availability_zones_count" {
+  description = "The number of AZs."
+  type        = number
+  default     = 2
+}
 
 variable "project" {
   description = "Name to be used on all the resources as identifier. e.g. Project name, Application name"
@@ -23,21 +26,8 @@ variable "project" {
   type = string
 }
 
-variable "owner" {
-  description = "Name of the project owner."
-  type        = string
-}
-
-variable "billing_code" {
-  description = "Name of billing code of project."
-  type        = string
-  default     = "Unknown"
-}
-
-
 # VPC Configuration
-
-variable "cidr" {
+variable "vpc_cidr" {
   description = "The CIDR block for the VPC. Default value is a valid CIDR, but not acceptable by AWS and should be overridden"
   type        = string
   default     = "10.0.0.0/16"
@@ -48,15 +38,6 @@ variable "subnet_cidr_bits" {
   type        = number
   default     = 8
 }
-
-
-# cluster
-variable "k8s_service_cidr" {
-  description = "The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_cluster#kubernetes_network_config"
-  type        = string
-  default     = "192.168.0.0/16"
-}
-
 
 # Management Access
 variable "office_cidr" {
