@@ -1,6 +1,6 @@
 # Amazon EKS Terraform Workshop
 
-> Amazon EKS Terraform Workshop. Provisioning production-ready Amazon EKS clusters using Terraform.
+> Amazon Elastic Kubernetes Service (EKS) Terraform Workshop. Provisioning production-ready Amazon EKS clusters using Terraform.
 
 
 
